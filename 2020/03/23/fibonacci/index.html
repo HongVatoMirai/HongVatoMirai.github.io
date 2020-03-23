@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="矩阵的快速幂," />
 
 
 
@@ -79,15 +79,16 @@
 
 
 
-<meta name="description" content="前言&amp;emsp;第一次真正意义上去学习使用git和github，为了纪念这It界的盛事，我决定写篇文章说说使用git的基本命令 &#x2F;&#x2F;现在已经是老菜鸟了Orz,再不学习就凉了。 git管理本地仓库git初始化及仓库创建和操作 基本信息设置设置用户名git config –global user.name ‘yourname’设置用户名邮箱git config –global user.email ‘">
+<meta name="description" content="题目输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：F(0) &#x3D; 0,   F(1) &#x3D; 1F(N) &#x3D; F(N - 1) + F(N - 2), 其中 N &gt; 1.斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。 分析法一：迭代；法二：递归；这两个都比较普通，无法解决时间超时等问题。法三：公式法，这个还没怎么用过，应为总怕">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git的基本使用和管理">
-<meta property="og:url" content="http://yoursite.com/2020/03/22/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%92%8C%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:title" content="求斐波那契数列">
+<meta property="og:url" content="http://yoursite.com/2020/03/23/fibonacci/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言&amp;emsp;第一次真正意义上去学习使用git和github，为了纪念这It界的盛事，我决定写篇文章说说使用git的基本命令 &#x2F;&#x2F;现在已经是老菜鸟了Orz,再不学习就凉了。 git管理本地仓库git初始化及仓库创建和操作 基本信息设置设置用户名git config –global user.name ‘yourname’设置用户名邮箱git config –global user.email ‘">
-<meta property="article:published_time" content="2020-03-22T14:28:53.000Z">
-<meta property="article:modified_time" content="2020-03-22T14:53:40.567Z">
+<meta property="og:description" content="题目输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：F(0) &#x3D; 0,   F(1) &#x3D; 1F(N) &#x3D; F(N - 1) + F(N - 2), 其中 N &gt; 1.斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。 分析法一：迭代；法二：递归；这两个都比较普通，无法解决时间超时等问题。法三：公式法，这个还没怎么用过，应为总怕">
+<meta property="article:published_time" content="2020-03-23T14:12:14.000Z">
+<meta property="article:modified_time" content="2020-03-23T14:50:15.639Z">
 <meta property="article:author" content="HongVa">
+<meta property="article:tag" content="矩阵的快速幂">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/22/git的基本使用和管理/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/23/fibonacci/"/>
 
 
 
 
 
-  <title>git的基本使用和管理 | Hexo</title>
+  <title>求斐波那契数列 | Hexo</title>
   
 
 
@@ -231,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%92%8C%E7%AE%A1%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/fibonacci/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="HongVa">
@@ -248,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git的基本使用和管理</h1>
+          <h1 class="post-title" itemprop="name headline">求斐波那契数列</h1>
         
 
         <div class="post-meta">
@@ -260,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-22T22:28:53+08:00">
-                2020-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T22:12:14+08:00">
+                2020-03-23
               </time>
             
 
@@ -270,28 +271,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -320,28 +299,43 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;第一次真正意义上去学习使用git和github，为了纪念这It界的盛事，我决定写篇文章说说使用git的基本命令 //现在已经是老菜鸟了Orz,再不学习就凉了。</p>
-<h2 id="git管理本地仓库"><a href="#git管理本地仓库" class="headerlink" title="git管理本地仓库"></a>git管理本地仓库</h2><h3 id="git初始化及仓库创建和操作"><a href="#git初始化及仓库创建和操作" class="headerlink" title="git初始化及仓库创建和操作"></a>git初始化及仓库创建和操作</h3><blockquote>
-<p><strong>基本信息设置</strong><br><strong><em>设置用户名</em></strong><br>git config –global user.name ‘yourname’<br><strong><em>设置用户名邮箱</em></strong><br>git config –global user.email ‘youremail’</p>
-</blockquote>
-<h3 id="向仓库添加文件"><a href="#向仓库添加文件" class="headerlink" title="向仓库添加文件"></a>向仓库添加文件</h3><ul>
-<li>Git add (工作目录-&gt;暂存区)</li>
-<li>Git status 查看提交状态</li>
-<li>Git commit -m “”(暂存区-&gt;仓库)</li>
-</ul>
-<h3 id="删除仓库文件"><a href="#删除仓库文件" class="headerlink" title="删除仓库文件"></a>删除仓库文件</h3><ul>
-<li>Rm -rf xxx 删除文件</li>
-<li>Git rm xxx    从git中删除文件</li>
-<li>Git commit -m “”</li>
-</ul>
-<h2 id="Git-管理远程仓库"><a href="#Git-管理远程仓库" class="headerlink" title="Git 管理远程仓库"></a>Git 管理远程仓库</h2><ol>
-<li>Git clone ‘仓库地址’ #先克隆下来</li>
-<li>做自己的修改</li>
-<li>git add</li>
-<li>git commit -m</li>
-<li>git push</li>
-</ol>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>&emsp;只是一些很基本的操作，github上的fetch和pull，分支和合并等等之后再谈吧。。</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：<br>F(0) = 0,   F(1) = 1<br>F(N) = F(N - 1) + F(N - 2), 其中 N &gt; 1.<br>斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>法一：迭代；法二：递归；这两个都比较普通，无法解决时间超时等问题。<br>法三：公式法，这个还没怎么用过，应为总怕精度会出现问题Orz。法四：退出矩阵递推方程，用矩阵快速幂完美解决。下面就主讲法四。</p>
+<h2 id="如何推出矩阵递推方程"><a href="#如何推出矩阵递推方程" class="headerlink" title="如何推出矩阵递推方程"></a>如何推出矩阵递推方程</h2><p>先看看这个式子F(N) = F(N - 1) + F(N - 2)，明显就是后一项由前两项递推得出。但这种递推不是很对称哈哈。我们比较喜欢的是后一项由前一项推出。那有啥方法可以变换一下，肯定是有的。写成[F(N),F(N - 1)] = [F(N-1),F(N - 2)] * [[a,b],[c,d]]。再看看，对称了！你令Xn = [F(N),F(N - 1)]，那Xn-1不就是[F(N-1),F(N - 2)]了吗？好，那为啥要乘个[[a,b],[c,d]]，你想啊，这1×2的矩阵不就等于1×2的矩阵乘以2×2的矩阵吗？因此我们确定一下这个[[a,b],[c,d]]吧。好要注意到F(N) =F(N - 1) * 1 + F(N - 2) * 1 ; F(N - 1) = F(N - 1) * 1 + F(N - 2) * 0。 wow，系数矩阵这不就出来了吗，[[1,1],[1,0]]</p>
+<h2 id="递推方程：-f-n-f-n-1-f-n-1-f-n-2-1-1-1-0"><a href="#递推方程：-f-n-f-n-1-f-n-1-f-n-2-1-1-1-0" class="headerlink" title="递推方程：(f(n),f(n-1))=(f(n-1),f(n-2)) * [[1,1],[1,0]]"></a>递推方程：(f(n),f(n-1))=(f(n-1),f(n-2)) * [[1,1],[1,0]]</h2><p>不难发现，最后写下去应该是(f(n),f(n-1))=(f(1),f(0)) * [[1,1],[1,0]] ^ n-1。 好，那么问题就仅剩如何解决[[1,1],[1,0]] ^ n-1啦！</p>
+<h2 id="矩阵的快速幂"><a href="#矩阵的快速幂" class="headerlink" title="矩阵的快速幂"></a>矩阵的快速幂</h2><p>好，不就是[[1,1],[1,0]] ^ n-1吗，老子乘个n次，但有些题就是连O(n)都给你卡。哦，那就要想O(logn)了，那么问题来了，如何降到O(logn)呢？想一下，这个幂次n-1真的要一次一次弄吗？要知道任何数都可以拆成2的n次方相加的呀，比如7 = 2^2 + 2 + 1。 那7次就降到3次了。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="矩阵结构体"><a href="#矩阵结构体" class="headerlink" title="矩阵结构体"></a>矩阵结构体</h3><pre><code>//2.定义矩阵结构体，为了下面实例化矩阵对象方便，更重要return个struct比返回二维数组方便Orz
+struct Matrix{
+long long mat[3][3]; //定义矩阵,***注意类型要根据实际需求确定***
+int len1;   //len1是行数
+int len2;   //len2是列数</code></pre><p>}x,y;</p>
+<h3 id="两个矩阵的普通相乘"><a href="#两个矩阵的普通相乘" class="headerlink" title="两个矩阵的普通相乘"></a>两个矩阵的普通相乘</h3><pre><code>Matrix mul(Matrix A, Matrix B)
+{
+Matrix temp;
+temp.len1 = A.len1;
+temp.len2 = B.len2;
+//三层循环搞矩阵相乘，公式temp.mat[i][j] += A.mat[i][k] * B.mat[k][j]
+for(int i=0;i&lt;temp.len1;i++)
+    for(int j=0;j&lt;temp.len2;j++)
+    {
+        temp.mat[i][j] = 0;
+        for(int k=0;k&lt;A.len2;k++){
+            temp.mat[i][j] = (temp.mat[i][j] + ((A.mat[i][k]%mod) * (B.mat[k][j]%mod))%mod)%mod;
+        }
+    }
+return temp;
+}</code></pre><h3 id="矩阵的快速幂核心"><a href="#矩阵的快速幂核心" class="headerlink" title="矩阵的快速幂核心"></a>矩阵的快速幂核心</h3><pre><code>Matrix matPow(Matrix base, Matrix pow_mat, int num)  //base是基矩阵，pow_mat是幂次矩阵，最后基矩阵将变成结果矩阵
+{
+while(num){
+    if(num&amp;1)   //二进制最后一个数为1, 则base要乘一个pow_mat
+    {
+        base = mul(base,pow_mat);
+    }
+    pow_mat = mul(pow_mat,pow_mat); //pow_mat要翻倍
+    num = num&gt;&gt;1;   //num除以2
+}
+return base;
+}</code></pre><p><a href="https://blog.csdn.net/red_red_red/article/details/90208713" target="_blank" rel="noopener">主要参考博客</a></p>
 
       
     </div>
@@ -357,6 +351,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%9F%A9%E9%98%B5%E7%9A%84%E5%BF%AB%E9%80%9F%E5%B9%82/" rel="tag"># 矩阵的快速幂</a>
+          
+        </div>
+      
 
       
       
@@ -366,8 +366,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/22/the-First-Article/" rel="next" title="the First Article">
-                <i class="fa fa-chevron-left"></i> the First Article
+              <a href="/2020/03/22/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%92%8C%E7%AE%A1%E7%90%86/" rel="next" title="git的基本使用和管理">
+                <i class="fa fa-chevron-left"></i> git的基本使用和管理
               </a>
             
           </div>
@@ -375,10 +375,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/23/fibonacci/" rel="prev" title="求斐波那契数列">
-                求斐波那契数列 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -510,7 +506,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git管理本地仓库"><span class="nav-number">2.</span> <span class="nav-text">git管理本地仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git初始化及仓库创建和操作"><span class="nav-number">2.1.</span> <span class="nav-text">git初始化及仓库创建和操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向仓库添加文件"><span class="nav-number">2.2.</span> <span class="nav-text">向仓库添加文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除仓库文件"><span class="nav-number">2.3.</span> <span class="nav-text">删除仓库文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-管理远程仓库"><span class="nav-number">3.</span> <span class="nav-text">Git 管理远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何推出矩阵递推方程"><span class="nav-number">3.</span> <span class="nav-text">如何推出矩阵递推方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递推方程：-f-n-f-n-1-f-n-1-f-n-2-1-1-1-0"><span class="nav-number">4.</span> <span class="nav-text">递推方程：(f(n),f(n-1))&#x3D;(f(n-1),f(n-2)) * [[1,1],[1,0]]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的快速幂"><span class="nav-number">5.</span> <span class="nav-text">矩阵的快速幂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">6.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵结构体"><span class="nav-number">6.1.</span> <span class="nav-text">矩阵结构体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个矩阵的普通相乘"><span class="nav-number">6.2.</span> <span class="nav-text">两个矩阵的普通相乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵的快速幂核心"><span class="nav-number">6.3.</span> <span class="nav-text">矩阵的快速幂核心</span></a></li></ol></li></ol></div>
             
 
           </div>

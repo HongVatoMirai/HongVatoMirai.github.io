@@ -228,6 +228,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/23/fibonacci/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HongVa">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/fibonacci/" itemprop="url">求斐波那契数列</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T22:12:14+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>输入 n ，求斐波那契（Fibonacci）数列的第 n 项。斐波那契数列的定义如下：<br>F(0) = 0,   F(1) = 1<br>F(N) = F(N - 1) + F(N - 2), 其中 N &gt; 1.<br>斐波那契数列由 0 和 1 开始，之后的斐波那契数就是由之前的两数相加而得出。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>法一：迭代；法二：递归；这两个都比较普通，无法解决时间超时等问题。<br>法三：公式法，这个还没怎么用过，应为总怕精度会出现问题Orz。法四：退出矩阵递推方程，用矩阵快速幂完美解决。下面就主讲法四。</p>
+<h2 id="如何推出矩阵递推方程"><a href="#如何推出矩阵递推方程" class="headerlink" title="如何推出矩阵递推方程"></a>如何推出矩阵递推方程</h2><p>先看看这个式子F(N) = F(N - 1) + F(N - 2)，明显就是后一项由前两项递推得出。但这种递推不是很对称哈哈。我们比较喜欢的是后一项由前一项推出。那有啥方法可以变换一下，肯定是有的。写成[F(N),F(N - 1)] = [F(N-1),F(N - 2)] * [[a,b],[c,d]]。再看看，对称了！你令Xn = [F(N),F(N - 1)]，那Xn-1不就是[F(N-1),F(N - 2)]了吗？好，那为啥要乘个[[a,b],[c,d]]，你想啊，这1×2的矩阵不就等于1×2的矩阵乘以2×2的矩阵吗？因此我们确定一下这个[[a,b],[c,d]]吧。好要注意到F(N) =F(N - 1) * 1 + F(N - 2) * 1 ; F(N - 1) = F(N - 1) * 1 + F(N - 2) * 0。 wow，系数矩阵这不就出来了吗，[[1,1],[1,0]]</p>
+<h2 id="递推方程：-f-n-f-n-1-f-n-1-f-n-2-1-1-1-0"><a href="#递推方程：-f-n-f-n-1-f-n-1-f-n-2-1-1-1-0" class="headerlink" title="递推方程：(f(n),f(n-1))=(f(n-1),f(n-2)) * [[1,1],[1,0]]"></a>递推方程：(f(n),f(n-1))=(f(n-1),f(n-2)) * [[1,1],[1,0]]</h2><p>不难发现，最后写下去应该是(f(n),f(n-1))=(f(1),f(0)) * [[1,1],[1,0]] ^ n-1。 好，那么问题就仅剩如何解决[[1,1],[1,0]] ^ n-1啦！</p>
+<h2 id="矩阵的快速幂"><a href="#矩阵的快速幂" class="headerlink" title="矩阵的快速幂"></a>矩阵的快速幂</h2><p>好，不就是[[1,1],[1,0]] ^ n-1吗，老子乘个n次，但有些题就是连O(n)都给你卡。哦，那就要想O(logn)了，那么问题来了，如何降到O(logn)呢？想一下，这个幂次n-1真的要一次一次弄吗？要知道任何数都可以拆成2的n次方相加的呀，比如7 = 2^2 + 2 + 1。 那7次就降到3次了。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="矩阵结构体"><a href="#矩阵结构体" class="headerlink" title="矩阵结构体"></a>矩阵结构体</h3><pre><code>//2.定义矩阵结构体，为了下面实例化矩阵对象方便，更重要return个struct比返回二维数组方便Orz
+struct Matrix{
+long long mat[3][3]; //定义矩阵,***注意类型要根据实际需求确定***
+int len1;   //len1是行数
+int len2;   //len2是列数</code></pre><p>}x,y;</p>
+<h3 id="两个矩阵的普通相乘"><a href="#两个矩阵的普通相乘" class="headerlink" title="两个矩阵的普通相乘"></a>两个矩阵的普通相乘</h3><pre><code>Matrix mul(Matrix A, Matrix B)
+{
+Matrix temp;
+temp.len1 = A.len1;
+temp.len2 = B.len2;
+//三层循环搞矩阵相乘，公式temp.mat[i][j] += A.mat[i][k] * B.mat[k][j]
+for(int i=0;i&lt;temp.len1;i++)
+    for(int j=0;j&lt;temp.len2;j++)
+    {
+        temp.mat[i][j] = 0;
+        for(int k=0;k&lt;A.len2;k++){
+            temp.mat[i][j] = (temp.mat[i][j] + ((A.mat[i][k]%mod) * (B.mat[k][j]%mod))%mod)%mod;
+        }
+    }
+return temp;
+}</code></pre><h3 id="矩阵的快速幂核心"><a href="#矩阵的快速幂核心" class="headerlink" title="矩阵的快速幂核心"></a>矩阵的快速幂核心</h3><pre><code>Matrix matPow(Matrix base, Matrix pow_mat, int num)  //base是基矩阵，pow_mat是幂次矩阵，最后基矩阵将变成结果矩阵
+{
+while(num){
+    if(num&amp;1)   //二进制最后一个数为1, 则base要乘一个pow_mat
+    {
+        base = mul(base,pow_mat);
+    }
+    pow_mat = mul(pow_mat,pow_mat); //pow_mat要翻倍
+    num = num&gt;&gt;1;   //num除以2
+}
+return base;
+}</code></pre><p><a href="https://blog.csdn.net/red_red_red/article/details/90208713" target="_blank" rel="noopener">主要参考博客</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/22/git%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%92%8C%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -816,7 +972,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -838,7 +994,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
